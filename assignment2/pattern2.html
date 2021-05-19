@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>PatternPrinting</title>
+<h1>PatternPrintring using while loop</h1>
+<script type="text/javascript">
+function printPattern()
+{
+var s=document.getElementById("numb").value;
+var i=1;
+var k=1;
+var inneritera=1;
+var space=1;
+var star=1;//for Increment of stars
+var j=2*s-2;  //to print spaces
+if(isNaN(s))
+{
+document.writeln("please enter valid no");
+}
+else
+{
+while(i<=s)
+{
+while(k<=star)
+{
+document.write("*");
+k++;
+}
+while(space<=j)
+{
+document.write("&nbsp; ");
+space++;
+}
+while(inneritera<=star)
+{
+document.write("*");
+inneritera++;
+}
+star++;
+j=j-2;
+i++;
+k=1;    //Again need to initiliate to 1 to iterate while loop for next times
+inneritera=1;
+space=1;
+document.write("<br>");
+}
+}
+}
+</script>
+</head>
+<body>
+Enter a number <input id="numb" placeholder="enter any no">
+<br>
+<br>
+<br>
+<br>
+<button onclick="printPattern()">printPattern</button>
+<br>
+<br>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>PatternPrinting</title>
+<h1>PatternPrintring using for loop</h1>
+<script type="text/javascript">
+function printPattern()
+{
+var s=document.getElementById("numb").value;
+var h=1;//for Increment of stars
+var j=2*s-2;  //to print spaces
+if(isNaN(s))
+{
+document.writeln("please enter valid no");
+}
+else
+{
+for(var x=1;x<=s;x++)
+{
+for(var inneriteration=1;inneriteration<=h;inneriteration++)
+{
+document.write("*");
+}
+for(var space=1;space<=j;space++)
+{
+document.write("&nbsp; ");
+}
+for(var inneritera=1;inneritera<=h;inneritera++)
+{
+document.write("*");
+}
+h++;
+j=j-2;
+document.write("<br>");
+}
+}
+}
+</script>
+</head>
+<body>
+Enter a number <input id="numb" placeholder="enter any no">
+<br>
+<br>
+<br>
+<br>
+<button onclick="printPattern()">printPattern</button>
+<br>
+<br>
+</body>
+</html>

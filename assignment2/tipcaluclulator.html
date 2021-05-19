@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>TipCalculator</title>
+<h1>TipCalculator</h1>
+<script type="text/javascript">
+function TipCalculate()
+{
+var TotalBill=document.getElementById("numb").value;
+TotalBill=Number(TotalBill);
+var NoOfPersons=document.getElementById("noofpersons").value;
+var select=document.getElementById("select box");
+var Rating=select.options[select.selectedIndex].value;
+if(isNaN(TotalBill))
+{
+document.writeln("please enter valid no");
+}
+else
+{
+var Totaltip=(Rating*TotalBill)/100;
+var Total=TotalBill+Totaltip;
+var Totalbillperperson=Total/NoOfPersons;
+Totaltip='$'+Totaltip;
+Totalbillperperson='$'+Totalbillperperson;
+document.getElementsByName('Totaltip')[0].value=Totaltip;
+document.getElementsByName('Totalbillperperson ')[0].value=Totalbillperperson ;
+}
+}
+</script>
+</head>
+<body>
+How much was your bill?
+<br>
+<br>
+$ <input id="numb" placeholder="Bill Amount">
+<br>
+<br>
+How much your service?
+<br>
+<br>
+<select id="select box">
+<option value="30">30%-outstanding</option>
+<option value="20">20%-Good</option>
+<option value="15">15%-Ok</option>
+<option value="10">10%-Bad</option>
+<option value="5">5%-Terrible</option>
+</select>
+<br>
+<br>
+How many People are sharing the bill?
+<br>
+<br>
+<input id="noofpersons" placeholder="No of people">people
+<br>
+<br>
+<button onclick="TipCalculate()">calculate</button>
+<br>
+<br>
+<label for="displayValue">Totaltip: </label><input type="textbox" name="Totaltip">
+<label for="displayValue">Totalbillperperson: </label><input type="textbox" name="Totalbillperperson ">
+</body>
+</html>
